@@ -26,12 +26,12 @@ namespace ExamplePlugin;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerRespawnEvent;
 
-class ExampleListener implements Listener{
+class ExampleListener implements Listener {
 
 	/** @var MainClass */
 	private $plugin;
 
-	public function __construct(MainClass $plugin){
+	public function __construct(MainClass $plugin) {
 		$this->plugin = $plugin;
 	}
 
@@ -41,7 +41,8 @@ class ExampleListener implements Listener{
 	 * @priority        NORMAL
 	 * @ignoreCancelled false
 	 */
-	public function onSpawn(PlayerRespawnEvent $event) : void{
+	public function onSpawn(PlayerRespawnEvent $event): void {
 		$this->plugin->getServer()->broadcastMessage($event->getPlayer()->getDisplayName() . " has just spawned!");
 	}
+
 }

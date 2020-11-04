@@ -7,16 +7,17 @@ namespace ExamplePlugin;
 use pocketmine\scheduler\Task;
 use pocketmine\Server;
 
-class BroadcastTask extends Task{
+class BroadcastTask extends Task {
 
 	/** @var Server */
 	private $server;
 
-	public function __construct(Server $server){
+	public function __construct(Server $server) {
 		$this->server = $server;
 	}
 
-	public function onRun(int $currentTick) : void{
+	public function onRun(int $currentTick): void {
 		$this->server->broadcastMessage("[ExamplePlugin] I've run on tick " . $currentTick);
 	}
+
 }
